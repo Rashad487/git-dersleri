@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "mouse0270-bootstrap-notify@3.1.7",
+      "destination": "wwwroot/vendor/mouse0270-bootstrap-notify/"
+    },
+    {
+      "library": "jquery-cookie@1.4.1",
+      "destination": "wwwroot/vendor/jquery-cookie/"
+    },
+    {
+      "library": "signalr.js@2.4.0",
+      "destination": "wwwroot/signalr.js/"
+    }
+  ]
+}

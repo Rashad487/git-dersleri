@@ -1,0 +1,39 @@
+﻿
+@model List<Friend>
+
+@foreach (var friend in Model)
+{
+
+    <li class="list-group-item d-flex">
+        <div class="mr-4">
+            <figure class="avatar">
+                <img src="~/wwwroot/userData/profile_image/@friend.Sender.Avatar" class="rounded-circle">
+            </figure>
+        </div>
+        <div class="users-list-body d-flex">
+            <div>
+                <h5>@friend.Sender.Firstname   @friend.Sender.Lastname</h5>
+                <p>@friend.Message</p>
+            </div>
+
+            <div class="users-list-action action-toggle m-4">
+                <div class="dropdown">
+                    <a data-toggle="dropdown" href="#">
+                        <i class="ti-more"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right senderId" id="@friend.SenderId">
+                        <a href="#" class="dropdown-item acceptfriend">Accept</a>
+                        <a href="#" class="dropdown-item deletefriend">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+
+}
+<li class="list-group-item d-flex reguestfr">
+    <div class="mr-4">
+    </div>
+    <div class="users-list-body d-flex">
+    </div>
+</li>

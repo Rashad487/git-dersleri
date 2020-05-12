@@ -1,0 +1,54 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Write Me Everything - Chat and Discussion Platform</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="~/wwwroot/dist/media/img/favicon.png" type="image/png">
+
+    <!-- Soho css -->
+    <link rel="stylesheet" href="~/wwwroot/dist/css/soho.min.css">
+</head>
+<body class="form-membership">
+
+    <div class="form-wrapper">
+        @RenderBody()
+
+    </div>
+    @{
+        Random rnd = new Random();
+        int i = rnd.Next(1, 51);
+
+    }
+    <!-- JQuery -->
+    <script src="~/wwwroot/vendor/jquery-3.4.1.min.js"></script>
+
+    <!--Jquery-Cookie -->
+    <script src="~/wwwroot/vendor/jquery-cookie/jquery.cookie.min.js"></script>
+
+    <!-- Popper.js -->
+    <script src="~/wwwroot/vendor/popper.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="~/wwwroot/vendor/bootstrap/bootstrap.min.js"></script>
+
+    <!-- Soho -->
+    <script src="~/wwwroot/dist/js/soho.min.js?@i"></script>
+
+    <!-- Notify -->
+    <script src="~/wwwroot/vendor/mouse0270-bootstrap-notify/bootstrap-notify.min.js"></script>
+
+    <!-- Ajax -->
+    <script src="~/wwwroot/src/js/ajax.js?@i"></script>
+
+    <!-- signalR -->
+    <script src="~/Scripts/jquery.signalR-2.4.1.js"></script>
+
+    <script src="~/signalr/hubs"></script>
+
+</body>
+</html>

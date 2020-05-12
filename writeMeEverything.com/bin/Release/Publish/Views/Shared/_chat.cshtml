@@ -1,0 +1,98 @@
+﻿@model  ViewChat
+
+
+
+<div class="chat-header @Model.Frend.Id">
+    <div class="chat-header-user">
+        <figure class="avatar avatar-lg">
+            <img src="~/wwwroot/userData/profile_image/@Model.Frend.Avatar" class="rounded-circle">
+        </figure>
+        <div>
+            <h5>@Model.Frend.Firstname  @Model.Frend.Lastname</h5>
+            <small class="text-muted">
+                @if (Model.Frend.isOnline)
+                {
+                    <i class="online">online</i>
+                }
+                else
+                {
+                    <i class="online">@Model.Frend.Lastseen</i>
+
+                }
+            </small>
+        </div>
+    </div>
+    <div class="chat-header-action">
+        <ul class="list-inline">
+            
+            
+            <li class="list-inline-item">
+                <a href="#" class="btn btn-secondary" data-toggle="dropdown">
+                    <i class="ti-more"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a href="#" data-navigation-target="contact-information" class="dropdown-item">Profile</a>
+                    <a href="#" class="dropdown-item">Delete</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">Block</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="chat-body">
+    <!-- .no-message -->
+    <!--
+    <div class="no-message-container">
+        <i class="fa fa-comments-o"></i>
+        <p>Select a chat to read messages</p>
+    </div>
+    -->
+    <div class="messages @Model.Frend.Id">
+        @foreach (var msg in Model.Messages)
+        {
+            if (msg.SenderId == Model.Frend.Id)
+            {
+                <div class="message-item">
+                    <div class="message-content">
+                        @msg.Content
+                    </div>
+                    <div class="message-action">
+                        @msg.CreateAt
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="message-item outgoing-message">
+                    <div class="message-content">
+                        @msg.Content
+                    </div>
+                    <div class="message-action">
+                        @msg.CreateAt <i class="ti-double-check"></i>
+                    </div>
+                </div>
+            }
+        }
+
+
+
+    </div>
+</div>
+
+<div class="chat-footer">
+    <form action="">
+        <input type="text" class="form-control" placeholder="Your message"
+               aria-label="Your message" id="@Model.Frend.Id" aria-describedby="button-addon2">
+        <div class="form-buttons">
+            <button class="btn btn-light btn-floating" type="button">
+                <i class="fa fa-paperclip"></i>
+            </button>
+            <button class="btn btn-primary btn-floating" type="submit">
+                <i class="fa fa-send"></i>
+            </button>
+        </div>
+    </form>
+</div>
+
+<!-- ./ chat -->
